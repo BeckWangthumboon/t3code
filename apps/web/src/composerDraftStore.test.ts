@@ -80,7 +80,7 @@ function resetComposerDraftStore() {
 }
 
 function modelSelection(
-  provider: "codex" | "claudeAgent",
+  provider: "codex" | "claudeAgent" | "opencode",
   model: string,
   options?: ModelSelection["options"],
 ): ModelSelection {

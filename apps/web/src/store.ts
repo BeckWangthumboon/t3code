@@ -80,9 +80,9 @@ function updateProject(
   return changed ? next : projects;
 }
 
-function normalizeModelSelection<T extends { provider: "codex" | "claudeAgent"; model: string }>(
-  selection: T,
-): T {
+function normalizeModelSelection<
+  T extends { provider: "codex" | "claudeAgent" | "opencode"; model: string },
+>(selection: T): T {
   return {
     ...selection,
     model: resolveModelSlugForProvider(selection.provider, selection.model),
@@ -493,7 +493,7 @@ function toLegacySessionStatus(
 }
 
 function toLegacyProvider(providerName: string | null): ProviderKind {
-  if (providerName === "codex" || providerName === "claudeAgent") {
+  if (providerName === "codex" || providerName === "claudeAgent" || providerName === "opencode") {
     return providerName;
   }
   return "codex";

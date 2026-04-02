@@ -134,6 +134,11 @@ describe("WsRpcAtomClient", () => {
           ...DEFAULT_SERVER_SETTINGS.providers.claudeAgent,
           enabled: false,
         },
+        opencode: {
+          binaryPath: "opencode",
+          customModels: [],
+          enabled: true,
+        },
       },
     };
     const requestPromise = runRpc((client) => client(WS_METHODS.serverGetSettings, {}));
@@ -183,6 +188,11 @@ describe("WsRpcAtomClient", () => {
         claudeAgent: {
           ...DEFAULT_SERVER_SETTINGS.providers.claudeAgent,
           enabled: false,
+        },
+        opencode: {
+          binaryPath: "opencode",
+          customModels: [],
+          enabled: true,
         },
       },
     };

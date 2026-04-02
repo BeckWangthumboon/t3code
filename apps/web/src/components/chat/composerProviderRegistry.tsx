@@ -155,6 +155,11 @@ const composerProviderRegistry: Record<ProviderKind, ProviderRegistryEntry> = {
       />
     ),
   },
+  opencode: {
+    getState: (input) => getProviderStateFromCapabilities(input),
+    renderTraitsMenuContent: () => null,
+    renderTraitsPicker: () => null,
+  },
 };
 
 export function getComposerProviderState(input: ComposerProviderStateInput): ComposerProviderState {
